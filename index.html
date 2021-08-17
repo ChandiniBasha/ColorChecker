@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +12,7 @@
         }
 
         #color {
-            height: 1.5rem;
+	    height: 1.5rem;
             width: 15rem;
             border-radius: 1rem;
             border: 3px solid rgb(226, 226, 226);
@@ -24,18 +23,19 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="bg-color">
         <div>
             <input type="text" placeholder="#ffffff" id="color">
         </div>
     </div>
     <script>
         const colorInputEl = document.getElementById('color')
+	const colorInputEl2 = document.getElementById('bg-color')
         colorInputEl.addEventListener('input', event => {
             const color = event.target.value
             const hexColorRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/
             if( color.match(hexColorRegex) ) {
-                colorInputEl.style.borderColor = color
+                colorInputEl2.style.backgroundColor = color
             } else {
                 colorInputEl.style.borderColor = 'rgb(226, 226, 226)'
             }
